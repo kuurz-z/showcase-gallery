@@ -1,8 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL;
-
-if (!API_URL) {
-  console.error("VITE_API_URL is missing. Check the .env file or Vercel settings.");
-}
+const API_URL = import.meta.env.VITE_API_URL || "";
 
 async function request(path, options = {}) {
   const res = await fetch(`${API_URL}/api/products${path}`, {
